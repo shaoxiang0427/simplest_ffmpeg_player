@@ -1,39 +1,44 @@
-×î¼òµ¥µÄ»ùÓÚFFmpegµÄÊÓÆµ²¥·ÅÆ÷ 2
+*è§£å†³ç¼–è¯‘sdlé¡¹ç›®æ—¶å‡ºç°æ— æ³•è§£æçš„å¤–éƒ¨ç¬¦å· __imp__fprintfè§£å†³åŠæ³•ï¼Œå‚è€ƒé“¾æ¥https://blog.csdn.net/johnny_nass_hu/article/details/74035400
+1ã€åœ¨mainæ–‡ä»¶simplest_ffmpeg_player.cppä¸­æ·»åŠ  extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+2ã€åœ¨é“¾æ¥åº“ä¸­æ·»åŠ legacy_stdio_definitions.lib
+
+
+æœ€ç®€å•çš„åŸºäºFFmpegçš„è§†é¢‘æ’­æ”¾å™¨ 2
 Simplest FFmpeg Player 2
 
-À×Ïöæè Lei Xiaohua
+é›·éœ„éª… Lei Xiaohua
 leixiaohua1020@126.com
-ÖĞ¹ú´«Ã½´óÑ§/Êı×ÖµçÊÓ¼¼Êõ
+ä¸­å›½ä¼ åª’å¤§å­¦/æ•°å­—ç”µè§†æŠ€æœ¯
 Communication University of China / Digital TV Technology
 http://blog.csdn.net/leixiaohua1020
 
 
-±¾³ÌĞòÊµÏÖÁËÊÓÆµÎÄ¼şµÄ½âÂëºÍÏÔÊ¾£¨Ö§³ÖHEVC£¬H.264£¬MPEG2µÈ£©¡£
-ÊÇ×î¼òµ¥µÄFFmpegÊÓÆµ½âÂë·½ÃæµÄ½Ì³Ì¡£
-Í¨¹ıÑ§Ï°±¾Àı×Ó¿ÉÒÔÁË½âFFmpegµÄ½âÂëÁ÷³Ì¡£
-ÏîÄ¿°üº¬6¸ö¹¤³Ì£º
-simplest_ffmpeg_player£º±ê×¼°æ£¬FFmpegÑ§Ï°µÄ¿ªÊ¼¡£
-simplest_ffmpeg_player_su£ºSU£¨SDL Update£©°æ£¬¼ÓÈëÁË¼òµ¥µÄSDLµÄEvent¡£
-simplest_ffmpeg_decoder£ºÒ»¸ö°üº¬ÁË·â×°¸ñÊ½´¦Àí¹¦ÄÜµÄ½âÂëÆ÷¡£Ê¹ÓÃÁËlibavcodecºÍlibavformat¡£
-simplest_ffmpeg_decoder_pure£ºÒ»¸ö´¿¾»µÄ½âÂëÆ÷¡£Ö»Ê¹ÓÃlibavcodec£¨Ã»ÓĞÊ¹ÓÃlibavformat£©¡£
-simplest_video_play_sdl2£ºÊ¹ÓÃSDL2²¥·ÅYUVµÄÀı×Ó¡£
-simplest_ffmpeg_helloworld£ºÊä³öFFmpegÀà¿âµÄĞÅÏ¢¡£
+æœ¬ç¨‹åºå®ç°äº†è§†é¢‘æ–‡ä»¶çš„è§£ç å’Œæ˜¾ç¤ºï¼ˆæ”¯æŒHEVCï¼ŒH.264ï¼ŒMPEG2ç­‰ï¼‰ã€‚
+æ˜¯æœ€ç®€å•çš„FFmpegè§†é¢‘è§£ç æ–¹é¢çš„æ•™ç¨‹ã€‚
+é€šè¿‡å­¦ä¹ æœ¬ä¾‹å­å¯ä»¥äº†è§£FFmpegçš„è§£ç æµç¨‹ã€‚
+é¡¹ç›®åŒ…å«6ä¸ªå·¥ç¨‹ï¼š
+simplest_ffmpeg_playerï¼šæ ‡å‡†ç‰ˆï¼ŒFFmpegå­¦ä¹ çš„å¼€å§‹ã€‚
+simplest_ffmpeg_player_suï¼šSUï¼ˆSDL Updateï¼‰ç‰ˆï¼ŒåŠ å…¥äº†ç®€å•çš„SDLçš„Eventã€‚
+simplest_ffmpeg_decoderï¼šä¸€ä¸ªåŒ…å«äº†å°è£…æ ¼å¼å¤„ç†åŠŸèƒ½çš„è§£ç å™¨ã€‚ä½¿ç”¨äº†libavcodecå’Œlibavformatã€‚
+simplest_ffmpeg_decoder_pureï¼šä¸€ä¸ªçº¯å‡€çš„è§£ç å™¨ã€‚åªä½¿ç”¨libavcodecï¼ˆæ²¡æœ‰ä½¿ç”¨libavformatï¼‰ã€‚
+simplest_video_play_sdl2ï¼šä½¿ç”¨SDL2æ’­æ”¾YUVçš„ä¾‹å­ã€‚
+simplest_ffmpeg_helloworldï¼šè¾“å‡ºFFmpegç±»åº“çš„ä¿¡æ¯ã€‚
 
-±¸×¢:
-±ê×¼°æÔÚ²¥·ÅÊÓÆµµÄÊ±ºò£¬»­ÃæÏÔÊ¾Ê¹ÓÃÑÓÊ±40msµÄ·½Ê½¡£ÕâÃ´×öÓĞÁ½¸öºó¹û£º
-£¨1£©SDLµ¯³öµÄ´°¿ÚÎŞ·¨ÒÆ¶¯£¬Ò»Ö±ÏÔÊ¾ÊÇÃ¦Âµ×´Ì¬
-£¨2£©»­ÃæÏÔÊ¾²¢²»ÊÇÑÏ¸ñµÄ40msÒ»Ö¡£¬ÒòÎª»¹Ã»ÓĞ¿¼ÂÇ½âÂëµÄÊ±¼ä¡£
-SU£¨SDL Update£©°æÔÚÊÓÆµ½âÂëµÄ¹ı³ÌÖĞ£¬²»ÔÙÊ¹ÓÃÑÓÊ±40msµÄ·½Ê½£¬¶øÊÇ´´½¨ÁË
-Ò»¸öÏß³Ì£¬Ã¿¸ô40ms·¢ËÍÒ»¸ö×Ô¶¨ÒåµÄÏûÏ¢£¬¸æÖªÖ÷º¯Êı½øĞĞ½âÂëÏÔÊ¾¡£ÕâÑù×öÖ®ºó£º
-£¨1£©SDLµ¯³öµÄ´°¿Ú¿ÉÒÔÒÆ¶¯ÁË
-£¨2£©»­ÃæÏÔÊ¾ÊÇÑÏ¸ñµÄ40msÒ»Ö¡
+å¤‡æ³¨:
+æ ‡å‡†ç‰ˆåœ¨æ’­æ”¾è§†é¢‘çš„æ—¶å€™ï¼Œç”»é¢æ˜¾ç¤ºä½¿ç”¨å»¶æ—¶40msçš„æ–¹å¼ã€‚è¿™ä¹ˆåšæœ‰ä¸¤ä¸ªåæœï¼š
+ï¼ˆ1ï¼‰SDLå¼¹å‡ºçš„çª—å£æ— æ³•ç§»åŠ¨ï¼Œä¸€ç›´æ˜¾ç¤ºæ˜¯å¿™ç¢ŒçŠ¶æ€
+ï¼ˆ2ï¼‰ç”»é¢æ˜¾ç¤ºå¹¶ä¸æ˜¯ä¸¥æ ¼çš„40msä¸€å¸§ï¼Œå› ä¸ºè¿˜æ²¡æœ‰è€ƒè™‘è§£ç çš„æ—¶é—´ã€‚
+SUï¼ˆSDL Updateï¼‰ç‰ˆåœ¨è§†é¢‘è§£ç çš„è¿‡ç¨‹ä¸­ï¼Œä¸å†ä½¿ç”¨å»¶æ—¶40msçš„æ–¹å¼ï¼Œè€Œæ˜¯åˆ›å»ºäº†
+ä¸€ä¸ªçº¿ç¨‹ï¼Œæ¯éš”40mså‘é€ä¸€ä¸ªè‡ªå®šä¹‰çš„æ¶ˆæ¯ï¼Œå‘ŠçŸ¥ä¸»å‡½æ•°è¿›è¡Œè§£ç æ˜¾ç¤ºã€‚è¿™æ ·åšä¹‹åï¼š
+ï¼ˆ1ï¼‰SDLå¼¹å‡ºçš„çª—å£å¯ä»¥ç§»åŠ¨äº†
+ï¼ˆ2ï¼‰ç”»é¢æ˜¾ç¤ºæ˜¯ä¸¥æ ¼çš„40msä¸€å¸§
 
 
 This software is a simplest video player based on FFmpeg.
 Suitable for beginner of FFmpeg.
 Solutions contains 6 Project:
 simplest_ffmpeg_player: Standard Version, suitable for biginner.
-simplest_ffmpeg_player_su: SU£¨SDL Update£©Version, Add SDL Event.
+simplest_ffmpeg_player_su: SUï¼ˆSDL Updateï¼‰Version, Add SDL Event.
 simplest_ffmpeg_decoder_pure: A pure decoder. Only use libavcodec (Without libavformat).
 simplest_ffmpeg_decoder: A decoder that can demux container format. Uses libavcodec and libavformat.
 simplest_video_play_sdl2: Example about using SDL2 play YUV data.
@@ -45,5 +50,5 @@ disadvantages:
 (1)SDL's Screen can't be moved and always "Busy".
 (2)Frame rate can't be accurate because it doesn't consider the time consumed 
 by avcodec_decode_video2()
-SU£¨SDL Update£©Version solved 2 problems above. It create a thread to send SDL 
+SUï¼ˆSDL Updateï¼‰Version solved 2 problems above. It create a thread to send SDL 
 Event every 40ms to tell the main loop to decode and show video frames.
